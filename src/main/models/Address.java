@@ -12,6 +12,10 @@ public class Address {
         if (!isValid(addressNumber)) throw new IllegalArgumentException("0 < address < 65535");
         this.addressNumber = addressNumber;
     }
+
+    public Integer asInteger() {
+        return addressNumber;
+    }
     private static boolean isValid(int addressNumber) {
         if (addressNumber > MAX_ADDRESS) return false;
         if (addressNumber < MIN_ADDRESS) return false;

@@ -13,4 +13,10 @@ public class AddressTest {
         assertTrue(address1.equals(address2));
         assertFalse(address1.equals(address3));
     }
+
+    @Test
+    public void asInteger() {
+        var address = new Address(1234);
+        assertEquals(1234, address.asInteger());
+    }
 }
