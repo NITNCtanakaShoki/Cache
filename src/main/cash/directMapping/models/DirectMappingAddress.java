@@ -1,6 +1,7 @@
 package main.cash.directMapping.models;
 
 import main.cash.models.BlockCount;
+import main.cash.models.WordCountPerBlock;
 import main.models.Address;
 
 import java.util.Objects;
@@ -16,8 +17,11 @@ public class DirectMappingAddress {
     public static DirectMappingAddress create(int addressNumber) {
         return new DirectMappingAddress(new Address(addressNumber));
     }
-    public DirectMappingAddress representativeAddress(BlockCount count) {
+    public DirectMappingAddress representativeAddress(WordCountPerBlock count) {
         return create(address.asInteger() / count.value());
+    }
+    public Integer allocate(BlockCount blocks, WordCountPerBlock words) {
+        return representativeAddress(words).surplusForAllocate(blocks);
     }
 
     @Override
@@ -31,5 +35,8 @@ public class DirectMappingAddress {
     @Override
     public int hashCode() {
         return Objects.hash(address);
+    }
+    private Integer surplusForAllocate(BlockCount blocks) {
+        return address.asInteger() % blocks.value();
     }
 }

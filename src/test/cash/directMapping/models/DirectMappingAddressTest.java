@@ -3,6 +3,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import main.cash.directMapping.models.DirectMappingAddress;
 import main.cash.models.BlockCount;
+import main.cash.models.WordCountPerBlock;
 import main.models.Address;
 import org.junit.jupiter.api.Test;
 
@@ -26,7 +27,13 @@ public class DirectMappingAddressTest {
     @Test
     public void representativeAddressTest() {
         var address = DirectMappingAddress.create(1235);
-        var represent = address.representativeAddress(new BlockCount(4));
-        assertEquals(DirectMappingAddress.create(308), represent);
+        var represent = address.representativeAddress(new WordCountPerBlock(8));
+        assertEquals(DirectMappingAddress.create(154), represent);
+    }
+
+    @Test
+    public void 分類() {
+        var address = DirectMappingAddress.create(1235);
+        assertEquals(2, address.allocate(new BlockCount(4), new WordCountPerBlock(8)));
     }
 }
