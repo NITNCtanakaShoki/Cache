@@ -1,19 +1,19 @@
-package test.cash.models;
-import main.cash.models.WordCountPerBlock;
+package test.cache.models;
+import main.cache.models.BlockCount;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class WordCountPerBlockTest {
+public class BlockCountTest {
     @Test
     public void インスタンス化() {
-        var wordCount = new WordCountPerBlock(2);
-        assertEquals(2, wordCount.value());
+        var blockCount = new BlockCount(2);
+        assertEquals(2, blockCount.value());
     }
 
     @Test
     public void 不正値() {
         assertThrows(IllegalArgumentException.class, () -> {
-            new WordCountPerBlock(-1);
+            new BlockCount(-1);
         });
     }
 }

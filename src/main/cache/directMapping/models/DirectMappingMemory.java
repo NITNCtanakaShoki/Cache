@@ -1,8 +1,7 @@
-package main.cash.directMapping.models;
+package main.cache.directMapping.models;
 
-import main.cash.models.BlockCount;
-import main.cash.models.WordCountPerBlock;
-import main.models.Address;
+import main.cache.models.BlockCount;
+import main.cache.models.WordCountPerBlock;
 
 import java.util.HashMap;
 

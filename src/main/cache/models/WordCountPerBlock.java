@@ -1,4 +1,4 @@
-package main.cash.models;
+package main.cache.models;
 
 public class WordCountPerBlock {
     private final int count;

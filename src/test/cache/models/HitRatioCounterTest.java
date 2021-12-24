@@ -1,6 +1,5 @@
-package test.cash.models;
-import main.cash.models.HitRatioCounter;
-import org.junit.jupiter.api.BeforeEach;
+package test.cache.models;
+import main.cache.models.HitRatioCounter;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

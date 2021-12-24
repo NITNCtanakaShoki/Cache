@@ -1,4 +1,4 @@
-package main.cash.models;
+package main.cache.models;
 
 public class HitRatioCounter {
     private final int hitCount;

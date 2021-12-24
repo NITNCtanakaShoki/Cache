@@ -1,9 +1,9 @@
-package test.cash.directMapping.models;
+package test.cache.directMapping.models;
 import static org.junit.jupiter.api.Assertions.*;
 
-import main.cash.directMapping.models.DirectMappingAddress;
-import main.cash.models.BlockCount;
-import main.cash.models.WordCountPerBlock;
+import main.cache.directMapping.models.DirectMappingAddress;
+import main.cache.models.BlockCount;
+import main.cache.models.WordCountPerBlock;
 import main.models.Address;
 import org.junit.jupiter.api.Test;
 

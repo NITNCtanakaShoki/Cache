@@ -4,15 +4,15 @@ import main.models.Address;
 
 import java.util.ArrayList;
 
-public class CashProcessor {
-    private final Cashable cashable;
+public class CacheProcessor {
+    private final Cacheable cacheable;
     private final ArrayList<Address> addresses;
-    public CashProcessor(Cashable cashable, ArrayList<Address> addresses) {
-        this.cashable = cashable;
+    public CacheProcessor(Cacheable cacheable, ArrayList<Address> addresses) {
+        this.cacheable = cacheable;
         this.addresses = addresses;
     }
     public int hitRatio() {
-        var store = cashable;
+        var store = cacheable;
         for (var address: addresses) {
             store = store.cash(address);
         }

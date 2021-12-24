@@ -1,4 +1,4 @@
-package main.cash.models;
+package main.cache.models;
 
 public class BlockCount {
     private final int count;
