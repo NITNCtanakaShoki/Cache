@@ -1,7 +1,6 @@
 package main.processor;
 
 import main.models.Address;
-
 import java.util.ArrayList;
 
 public class CacheProcessor {
@@ -14,7 +13,7 @@ public class CacheProcessor {
     public int hitRatio() {
         var store = cacheable;
         for (var address: addresses) {
-            store = store.cash(address);
+            store = store.cache(address);
         }
         return store.hitRatio();
     }

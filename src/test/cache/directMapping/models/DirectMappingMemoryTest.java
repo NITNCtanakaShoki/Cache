@@ -1,6 +1,6 @@
 package test.cache.directMapping.models;
-import static org.junit.jupiter.api.Assertions.*;
 
+import static org.junit.jupiter.api.Assertions.*;
 import main.cache.directMapping.models.DirectMappingAddress;
 import main.cache.directMapping.models.DirectMappingMemory;
 import main.cache.models.BlockCount;

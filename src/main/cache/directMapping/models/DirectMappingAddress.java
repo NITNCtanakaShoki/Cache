@@ -3,7 +3,6 @@ package main.cache.directMapping.models;
 import main.cache.models.BlockCount;
 import main.cache.models.WordCountPerBlock;
 import main.models.Address;
-
 import java.util.Objects;
 
 public class DirectMappingAddress {

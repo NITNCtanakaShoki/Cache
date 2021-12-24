@@ -1,12 +1,11 @@
 package test.processor;
+
 import main.models.Address;
 import main.processor.CacheProcessor;
 import main.processor.Cacheable;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CacheProcessorTest {
@@ -15,7 +14,7 @@ public class CacheProcessorTest {
             return 90;
         }
 
-        public Cacheable cash(Address address) {
+        public Cacheable cache(Address address) {
             return new Cash();
         }
     }

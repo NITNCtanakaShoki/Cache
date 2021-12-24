@@ -2,7 +2,6 @@ package main.cache.directMapping.models;
 
 import main.cache.models.BlockCount;
 import main.cache.models.WordCountPerBlock;
-
 import java.util.HashMap;
 
 public class DirectMappingMemory {
