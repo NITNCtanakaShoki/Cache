@@ -10,9 +10,6 @@ public class DirectMappingAddress {
     public DirectMappingAddress(CacheAddress address) {
         this.address = address;
     }
-    public Integer block(int blocks, int words) {
-        return address.asInteger() / words % blocks;
-    }
     public static DirectMappingAddress create(int addressNumber) {
         return new DirectMappingAddress(CacheAddress.create(addressNumber));
     }
