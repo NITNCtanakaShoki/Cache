@@ -1,23 +1,23 @@
 package main.cache.directMapping.models;
 
 import main.cache.models.BlockCount;
+import main.cache.models.CacheAddress;
 import main.cache.models.WordCountPerBlock;
-import main.models.Address;
 import java.util.Objects;
 
 public class DirectMappingAddress {
-    private final Address address;
-    public DirectMappingAddress(Address address) {
+    private final CacheAddress address;
+    public DirectMappingAddress(CacheAddress address) {
         this.address = address;
     }
     public Integer block(int blocks, int words) {
         return address.asInteger() / words % blocks;
     }
     public static DirectMappingAddress create(int addressNumber) {
-        return new DirectMappingAddress(new Address(addressNumber));
+        return new DirectMappingAddress(CacheAddress.create(addressNumber));
     }
     public DirectMappingAddress representativeAddress(WordCountPerBlock count) {
-        return create(address.asInteger() / count.value());
+        return new DirectMappingAddress(address.representativeAddress(count));
     }
     public Integer allocate(BlockCount blocks, WordCountPerBlock words) {
         return representativeAddress(words).surplusForAllocate(blocks);

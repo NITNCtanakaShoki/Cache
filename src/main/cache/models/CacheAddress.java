@@ -15,6 +15,9 @@ public class CacheAddress {
     public CacheAddress representativeAddress(WordCountPerBlock count) {
         return create(address.asInteger() / count.value());
     }
+    public Integer asInteger() {
+        return address.asInteger();
+    }
 
     @Override
     public boolean equals(Object o) {

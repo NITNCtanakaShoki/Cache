@@ -13,4 +13,10 @@ public class CacheAddressTest {
         var represent = address.representativeAddress(new WordCountPerBlock(8));
         assertEquals(CacheAddress.create(154), represent);
     }
+
+    @Test
+    public void asIntegerTest() {
+        var address = CacheAddress.create(112);
+        assertEquals(112, address.asInteger());
+    }
 }

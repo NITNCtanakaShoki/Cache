@@ -1,5 +1,6 @@
 package test.processor;
 
+import main.cache.models.CacheAddress;
 import main.models.Address;
 import main.processor.CacheProcessor;
 import main.processor.Cacheable;
@@ -9,12 +10,12 @@ import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CacheProcessorTest {
-    class Cash implements Cacheable {
+    static class Cash implements Cacheable {
         public int hitRatio() {
             return 90;
         }
 
-        public Cacheable cache(Address address) {
+        public Cacheable cache(CacheAddress address) {
             return new Cash();
         }
     }
@@ -24,7 +25,7 @@ public class CacheProcessorTest {
 
     @BeforeEach
     public void setUp() {
-        addressList = new ArrayList<Address>();
+        addressList = new ArrayList<>();
         addressList.add(new Address(1234));
         addressList.add(new Address(2333));
         addressList.add(new Address(109));

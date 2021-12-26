@@ -3,9 +3,9 @@ package main.cache.directMapping;
 import main.cache.directMapping.models.DirectMappingAddress;
 import main.cache.directMapping.models.DirectMappingMemory;
 import main.cache.models.BlockCount;
+import main.cache.models.CacheAddress;
 import main.cache.models.HitRatioCounter;
 import main.cache.models.WordCountPerBlock;
-import main.models.Address;
 import main.processor.Cacheable;
 
 public class DirectMappingCache implements Cacheable {
@@ -28,7 +28,7 @@ public class DirectMappingCache implements Cacheable {
     }
 
     @Override
-    public Cacheable cache(Address address) {
+    public Cacheable cache(CacheAddress address) {
         final var directMappingAddress = new DirectMappingAddress(address);
         return new DirectMappingCache(
                 nextCounter(directMappingAddress),

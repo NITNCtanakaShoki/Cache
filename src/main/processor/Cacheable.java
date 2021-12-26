@@ -1,8 +1,8 @@
 package main.processor;
 
-import main.models.Address;
+import main.cache.models.CacheAddress;
 
 public interface Cacheable {
     public int hitRatio();
-    public Cacheable cache(Address address);
+    public Cacheable cache(CacheAddress address);
 }
