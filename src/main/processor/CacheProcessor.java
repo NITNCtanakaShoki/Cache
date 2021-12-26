@@ -17,4 +17,7 @@ public class CacheProcessor {
         }
         return store.hitRatio();
     }
+    public String result() {
+        return String.format("%sのヒット率は%d%%", cacheable.title(), hitRatio());
+    }
 }

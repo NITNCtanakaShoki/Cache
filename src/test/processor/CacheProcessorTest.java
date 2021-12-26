@@ -35,5 +35,6 @@ public class CacheProcessorTest {
     @Test
     public void processTest() {
         assertEquals(processor.hitRatio(), 90);
+        assertEquals("Mockのヒット率は90%", processor.result());
     }
 }
