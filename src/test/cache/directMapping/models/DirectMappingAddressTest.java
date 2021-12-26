@@ -10,8 +10,7 @@ import org.junit.jupiter.api.Test;
 public class DirectMappingAddressTest {
     @Test
     public void addressBlockTest() {
-        var address = new Address(1234);
-        var directMappingAddress =  new DirectMappingAddress(address);
+        var directMappingAddress = DirectMappingAddress.create(1234);
 
         assertEquals(2, directMappingAddress.block(4, 8));
 
