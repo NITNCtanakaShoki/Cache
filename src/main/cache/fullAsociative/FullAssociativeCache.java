@@ -21,6 +21,10 @@ public class FullAssociativeCache implements Cacheable {
         this.memory = memory;
     }
 
+    public static FullAssociativeCache create(int words, int blocks) {
+        return new FullAssociativeCache(new WordCountPerBlock(words), new BlockCount(blocks));
+    }
+
     @Override
     public int hitRatio() {
         return counter.hitRatio();

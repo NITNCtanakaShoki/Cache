@@ -22,6 +22,10 @@ public class DirectMappingCache implements Cacheable {
         this.memory = memory;
     }
 
+    public static DirectMappingCache create(int words, int blocks) {
+        return new DirectMappingCache(new WordCountPerBlock(words), new BlockCount(blocks));
+    }
+
     @Override
     public int hitRatio() {
         return counter.hitRatio();
