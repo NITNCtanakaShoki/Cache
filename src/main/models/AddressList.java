@@ -1,8 +1,5 @@
 package main.models;
 
-
-import test.models.AddressListTest;
-
 import java.util.ArrayList;
 
 public class AddressList {
@@ -26,5 +23,10 @@ public class AddressList {
 
     public int count() {
         return addresses.size();
+    }
+
+    @Override
+    public String toString() {
+        return addresses.toString();
     }
 }
