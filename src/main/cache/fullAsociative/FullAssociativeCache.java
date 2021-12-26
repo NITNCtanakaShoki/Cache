@@ -25,6 +25,10 @@ public class FullAssociativeCache implements Cacheable {
         return new FullAssociativeCache(new WordCountPerBlock(words), new BlockCount(blocks));
     }
 
+    public String title() {
+        return "フルアソシアティブ方式";
+    }
+
     @Override
     public int hitRatio() {
         return counter.hitRatio();

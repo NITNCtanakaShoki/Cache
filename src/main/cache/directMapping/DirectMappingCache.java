@@ -26,6 +26,10 @@ public class DirectMappingCache implements Cacheable {
         return new DirectMappingCache(new WordCountPerBlock(words), new BlockCount(blocks));
     }
 
+    public String title() {
+        return "ダイレクトマッピング方式";
+    }
+
     @Override
     public int hitRatio() {
         return counter.hitRatio();

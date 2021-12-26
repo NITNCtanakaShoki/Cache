@@ -13,7 +13,9 @@ public class CacheProcessorTest {
         public int hitRatio() {
             return 90;
         }
-
+        public String title() {
+            return "Mock";
+        }
         public Cacheable cache(CacheAddress address) {
             return new Cash();
         }

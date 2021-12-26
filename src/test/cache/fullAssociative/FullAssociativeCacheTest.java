@@ -9,6 +9,11 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class FullAssociativeCacheTest {
+
+    @Test
+    public void title() {
+        assertEquals("フルアソシアティブ方式", FullAssociativeCache.create(8, 4).title());
+    }
     @Test
     public void cashTest() {
         Cacheable cache = new FullAssociativeCache(new WordCountPerBlock(8), new BlockCount(4));

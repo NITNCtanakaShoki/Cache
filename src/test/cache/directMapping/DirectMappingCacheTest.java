@@ -9,6 +9,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class DirectMappingCacheTest {
     @Test
+    public void titleTest() {
+        assertEquals("ダイレクトマッピング方式", DirectMappingCache.create(8, 4).title());
+    }
+    @Test
     public void cashTest() {
         Cacheable cache = new DirectMappingCache(new WordCountPerBlock(8), new BlockCount(4));
         cache = cache.cache(CacheAddress.create(1234));
