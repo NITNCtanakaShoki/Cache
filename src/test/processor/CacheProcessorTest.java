@@ -1,12 +1,11 @@
 package test.processor;
 
 import main.cache.models.CacheAddress;
-import main.models.Address;
+import main.models.AddressList;
 import main.processor.CacheProcessor;
 import main.processor.Cacheable;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class CacheProcessorTest {
@@ -20,16 +19,14 @@ public class CacheProcessorTest {
         }
     }
 
-    private ArrayList<Address> addressList;
+    private AddressList addressList;
     private CacheProcessor processor;
 
     @BeforeEach
     public void setUp() {
-        addressList = new ArrayList<>();
-        addressList.add(new Address(1234));
-        addressList.add(new Address(2333));
-        addressList.add(new Address(109));
-
+        addressList = AddressList.create(
+                new int[]{0, 8, 16, 64, 129, 69}
+        );
         processor = new CacheProcessor(new Cash(), addressList);
     }
 

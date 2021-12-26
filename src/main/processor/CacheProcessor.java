@@ -1,20 +1,19 @@
 package main.processor;
 
 import main.cache.models.CacheAddress;
-import main.models.Address;
-import java.util.ArrayList;
+import main.models.AddressList;
 
 public class CacheProcessor {
     private final Cacheable cacheable;
-    private final ArrayList<Address> addresses;
-    public CacheProcessor(Cacheable cacheable, ArrayList<Address> addresses) {
+    private final AddressList addressList;
+    public CacheProcessor(Cacheable cacheable, AddressList addressList) {
         this.cacheable = cacheable;
-        this.addresses = addresses;
+        this.addressList = addressList;
     }
     public int hitRatio() {
         var store = cacheable;
-        for (var address: addresses) {
-            store = store.cache(new CacheAddress(address));
+        for (int i = 0; i < addressList.count(); i++) {
+            store = store.cache(new CacheAddress(addressList.at(i)));
         }
         return store.hitRatio();
     }
