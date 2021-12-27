@@ -26,14 +26,24 @@ public class FullAssociativeMemory {
     }
 
     public FullAssociativeMemory recorded(CacheAddress address) {
-        if (isHit(address)) return this;
         return new FullAssociativeMemory(
                 blockCount,
                 wordCount,
-                recordedMemory(address.representativeAddress(wordCount))
+                nextMemories(address)
         );
     }
 
+    private ArrayList<CacheAddress> nextMemories(CacheAddress address) {
+        final var representative = address.representativeAddress(wordCount);
+        if (isHit(address)) return sortedRecentlyUsed(representative);
+        return recordedMemory(representative);
+    }
+    private ArrayList<CacheAddress> sortedRecentlyUsed(CacheAddress address) {
+        final var cloned = memoryClone();
+        cloned.remove(address);
+        cloned.add(0, address);
+        return cloned;
+    }
     private ArrayList<CacheAddress> recordedMemory(CacheAddress address) {
         return isRecordableWithoutDrop() ? recordedWithoutDrop(address) : recordedWithDrop(address);
 

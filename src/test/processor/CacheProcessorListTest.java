@@ -21,7 +21,7 @@ public class CacheProcessorListTest {
                         DirectMappingCache.create(8, 4),
                         FullAssociativeCache.create(8, 4)
                 },
-                AddressList.create(new int[]{0, 8, 16, 64, 129, 69})
+                AddressList.create(new int[]{0, 8, 16, 64, 128, 64, 256, 512, 1024, 64})
         );
     }
 
@@ -29,7 +29,7 @@ public class CacheProcessorListTest {
     public void test() {
         final var expected = new ArrayList<String>();
         expected.add("ダイレクトマッピング方式のヒット率は0%");
-        expected.add("フルアソシアティブ方式のヒット率は16%");
+        expected.add("フルアソシアティブ方式のヒット率は20%");
         final var printer = new MockPrinter();
         cacheProcessorList.out(printer);
         final var actual = printer.history();
