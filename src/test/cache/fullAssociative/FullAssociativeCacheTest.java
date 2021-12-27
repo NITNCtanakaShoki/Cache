@@ -33,4 +33,17 @@ public class FullAssociativeCacheTest {
         assertEquals(40, cache.hitRatio());
 
     }
+
+    @Test
+    public void 更新() {
+        Cacheable cache = new FullAssociativeCache(new WordCountPerBlock(8), new BlockCount(4));
+        cache = cache.cache(CacheAddress.create(0));
+        cache = cache.cache(CacheAddress.create(8));
+        cache = cache.cache(CacheAddress.create(16));
+        cache = cache.cache(CacheAddress.create(0));
+        cache = cache.cache(CacheAddress.create(32));
+        cache = cache.cache(CacheAddress.create(64));
+        cache = cache.cache(CacheAddress.create(0));
+        assertEquals(28, cache.hitRatio());
+    }
 }
